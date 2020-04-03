@@ -1,7 +1,7 @@
- # ╔═══╗ ♪ 
-#  ║███║ ♫  SURTIDITO
-#  ║ (●) ♫   MUSIKAL
-#  ╚═══╝♪♪ 
+        ╔═══╗ ♪ 
+        ║███║ ♫  SURTIDITO
+        ║ (●) ♫   MUSIKAL
+        ╚═══╝♪♪ 
 
 
 # SurtiditoMusical
@@ -12,7 +12,9 @@ Sitio web de música donde podrás escuchar rolitas chidas de cualquier artista.
  
  - Angular 8 / typescript
 
- - HTML5, CSS3 ( tal vez bootstrap o materialize)
+ - HTML5, CSS3
+
+ - Bootstrap
  
  - API de Spotify
 
