@@ -1,19 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { ApispotifyService } from 'src/app/services/apispotify.service';
 // import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  constructor() {}
+  constructor(private spotify: ApispotifyService) {
+    console.log('LISTOOON');
 
-  ngOnInit() {
+    this.spotify.getNewReleases();
   }
 
 }
+
+
+
 // export class HomeComponent implements OnInit {
 
 //   paises: any[] = [];

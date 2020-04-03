@@ -7,8 +7,10 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+//SERVICIO DE SPOTIFY
+import { ApispotifyService } from './services/apispotify.service';
 
-// import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,9 +23,9 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // HttpClientModule
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ApispotifyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
