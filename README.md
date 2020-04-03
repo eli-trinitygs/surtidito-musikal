@@ -4,7 +4,7 @@
         ╚═══╝♪♪ 
 
 
-# SurtiditoMusical
+# Surtidito Musikal
 
 Sitio web de música donde podrás escuchar rolitas chidas de cualquier artista.
 

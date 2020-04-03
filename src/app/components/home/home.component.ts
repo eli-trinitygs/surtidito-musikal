@@ -10,10 +10,18 @@ import { ApispotifyService } from 'src/app/services/apispotify.service';
 })
 export class HomeComponent {
 
+  newSongs: any[] = [];
+
+
   constructor(private spotify: ApispotifyService) {
     console.log('LISTOOON');
 
-    this.spotify.getNewReleases();
+    this.spotify.getNewReleases()
+    .subscribe( (data: any) => {
+      console.log(data.albums.items);
+
+      this.newSongs = data.albums.items;
+    })
   }
 
 }
