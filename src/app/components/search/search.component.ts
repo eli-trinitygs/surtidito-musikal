@@ -9,7 +9,8 @@ export class SearchComponent {
 
   constructor() { }
 
-  search() {
+  search(searching:string) {
+    console.log(searching);
     
   }
 
