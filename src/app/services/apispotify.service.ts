@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+//MAP
+import { map } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +17,10 @@ export class ApispotifyService {
         'Authorization': 'Bearer BQCvDrwr7fxK1eTdNg79k6L0os7lm4YQYswwkrcNFt_2WNsT5W6Vho2idRqcoXCbnMrs3X6hGAHZf9qCjFI'
       })
       
-      return this.http.get('https://api.spotify.com/v1/browse/new-releases', {headers});
+      return this.http.get('https://api.spotify.com/v1/browse/new-releases', {headers})
+              .pipe(map( data => {
+                return data['albums'].items;
+              } ));
       
       // this.http.get('https://api.spotify.com/v1/browse/new-releases', {headers})
       // .subscribe(data => {
@@ -30,7 +36,10 @@ export class ApispotifyService {
       'Authorization': 'Bearer BQCvDrwr7fxK1eTdNg79k6L0os7lm4YQYswwkrcNFt_2WNsT5W6Vho2idRqcoXCbnMrs3X6hGAHZf9qCjFI'
     })
     
-    return this.http.get(`https://api.spotify.com/v1/search?q=${ searching }&type=artist&limit=15`, {headers});
+    return this.http.get(`https://api.spotify.com/v1/search?q=${ searching }&type=artist&limit=15`, {headers})
+          .pipe( map ( data => {
+            return data['artists'].items;
+          }))
     
    }
    

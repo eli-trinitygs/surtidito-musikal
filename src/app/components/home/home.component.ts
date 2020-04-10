@@ -14,7 +14,6 @@ export class HomeComponent {
 
 
   constructor(private spotify: ApispotifyService) {
-    console.log('LISTOOON');
 
     this.spotify.getNewReleases()
     .subscribe( (data: any) => {
