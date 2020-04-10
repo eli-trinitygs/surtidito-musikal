@@ -12,14 +12,19 @@ export class HomeComponent {
 
   newSongs: any[] = [];
 
+  loading: boolean;
 
   constructor(private spotify: ApispotifyService) {
+  
+    this.loading = true;
+
 
     this.spotify.getNewReleases()
     .subscribe( (data: any) => {
       // console.log(data.albums.items);
-
+      this.loading = false;
       this.newSongs = data;
+      
     })
   }
 
