@@ -37,9 +37,7 @@ export class ApispotifyService {
     })
     
     return this.http.get(`https://api.spotify.com/v1/search?q=${ searching }&type=artist&limit=15`, {headers})
-          .pipe( map ( data => {
-            return data['artists'].items;
-          }))
+          .pipe( map ( data => data['artists'].items));
     
    }
    
