@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ApispotifyService } from 'src/app/services/apispotify.service';
 
 
 
@@ -11,13 +12,34 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ArtistComponent implements OnInit {
 
-  constructor(private router: ActivatedRoute) {
+  artist: any = {};
+
+  loadingArtist: boolean;
+
+  constructor(private router: ActivatedRoute,
+              private spotify: ApispotifyService ) {
+
+                this.loadingArtist = true;
+
     this.router.params.subscribe( params => {
-      console.log(params['params']);
+      // console.log(params['params']);
+      this.getArtist(params['id']);
     })
    }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  getArtist( id: string) {
+
+    this.loadingArtist = true;
+
+    this.spotify.getArtist(id)
+      .subscribe( artist => {
+        console.log(artist);
+        this.artist = artist;
+
+        this.loadingArtist = false;
+      })
   }
 
 }
