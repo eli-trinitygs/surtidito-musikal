@@ -42,7 +42,7 @@
                     <td>{{track.name}}</td>
                     <td>
                         <!-- <audio [src]="track.preview_url" controls></audio> -->
-                        <iframe src="https://open.spotify.com/embed?uri=spotify:track:7FIWs0pqAYbP91WWM0vlTQ" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <iframe [src]="track.uri | domseguro : 'https://open.spotify.com/embed?uri='" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </td>
                 </tr>
             </tbody>

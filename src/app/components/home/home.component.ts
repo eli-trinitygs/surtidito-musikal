@@ -14,9 +14,14 @@ export class HomeComponent {
 
   loading: boolean;
 
+  error: boolean;
+  mensajeError: string;
+
   constructor(private spotify: ApispotifyService) {
   
     this.loading = true;
+
+    this.error = false;
 
 
     this.spotify.getNewReleases()
@@ -24,8 +29,15 @@ export class HomeComponent {
       // console.log(data.albums.items);
       this.loading = false;
       this.newSongs = data;
-      
-    })
+    }, 
+    ( errorServicio ) => {
+
+      this.loading = false;
+      this.error = true;
+
+      console.log(errorServicio);
+      this.mensajeError = errorServicio.error.error.message;
+    } )
   }
 
 }
