@@ -20,6 +20,12 @@ Sitio web de música donde podrás escuchar rolitas chidas de cualquier artista.
 
 
 
+- Reforzamiento de rutas y parámetros de rutas
+- Uso de HTTP para obtener información
+- Uso de la API Spotify para otener información de: (artista, album, audio)
+- Widget de Spotify
+- Maps, observables
+
 
 --------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------
