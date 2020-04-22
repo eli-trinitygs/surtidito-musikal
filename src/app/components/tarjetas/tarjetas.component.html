@@ -4,9 +4,13 @@
     <div class="card puntero" 
     *ngFor = "let item of items" 
      (click)="viewArtist(item)">
+
         <img [src]="item.images | noimage" class="card-img-top" alt="Card image cap">
+
         <div class="card-body">
+            
             <h5 class="card-title">{{item.name}}</h5>
+            
             <p class="card-text">
                 <span *ngFor="let artist of item.artists"
                 class="badge badge-pill badge-danger">{{artist.name}}</span>
