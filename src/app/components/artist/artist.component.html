@@ -1,15 +1,9 @@
 <app-loading *ngIf="loadingArtist"></app-loading>
 
-<div class="col">
-    <img [src]="artist.images | noimage" class="img-artist img-fluid" alt="Responsive image">
-</div>
 
-
-<!--OP 1-->
-<!-- <div class="row">
+<div class="row animated fadeIn">
     <div class="col-2">
-        < !-- <img [src]="artist.images | noimage" class="img-thumbnail img-circle"> -- >
-        <img [src]="artist.images | noimage" class="img-artist img-fluid" alt="Responsive image">
+        <img [src]="artist.images | noimage" class="img-thumbnail img-circle">
     </div>
 
     <div class="col">
@@ -47,11 +41,11 @@
                     <td>{{track.album.name}}</td>
                     <td>{{track.name}}</td>
                     <td>
-                        <! -- <audio [src]="track.preview_url" controls></audio> -- >
+                        <!-- <audio [src]="track.preview_url" controls></audio> -->
                         <iframe [src]="track.uri | domseguro : 'https://open.spotify.com/embed?uri='" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
-</div> -->
+</div>
